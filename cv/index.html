@@ -1,140 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <title>CV – Kasper Jørgensen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../assets/style.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="topbar-title"><a href="../">Kasper Jørgensen</a></div>
-    <button id="settings-button" class="settings-button" aria-label="Open settings">
-      ⚙️
-    </button>
-    <div id="settings-popup" class="settings-popup hidden">
-      <h2>Settings</h2>
-      <label class="settings-item">
-        <input type="checkbox" id="theme-toggle" /> Dark mode
-      </label>
-      <button id="settings-close" class="settings-close">Close</button>
-    </div>
-  </header>
-
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="brand">
-        <h2>Research</h2>
-        <span class="subtitle">UCPH / DTU</span>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cv – Kasper Jørgensen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div id="topbar-slot"></div>
+      <div class="page-shell">
+        <div id="sidebar-slot"></div>
+        <main class="content">
+          <h1>Cv</h1>
+          <p>Content for Cv goes here.</p>
+        </main>
       </div>
-      <nav class="nav">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link active" href="/cv/">CV</a>
-        <a class="nav-link" href="/publications/">Publications</a>
-        <a class="nav-link" href="/posts/">Posts</a>
-        <a class="nav-link" href="/phd/">PhD work</a>
-      </nav>
-    </aside>
-
-    <main class="content">
-      <h1>Curriculum Vitae</h1>
-
-      <!-- Current position -->
-      <section>
-        <h2>Current position</h2>
-        <p><strong>PhD student, University of Copenhagen (Drug Design & Pharmacology) and DTU Compute</strong></p>
-        <p>
-          PhD on the <strong>FOREVER / FOREVER-OCT</strong> project (“Finding Ophthalmic Risk and Evaluating the Value
-          of Eye exams and their predictive Reliability”). The project builds a large Danish multimodal eye-health
-          cohort (fundus, OCT, visual fields, clinical measures) to identify risk factors for sight-threatening disease,
-          with a specific focus on <strong>glaucoma</strong> and explainable, multimodal deep learning on population-level data.
-        </p>
-        <p>
-          My work targets <strong>multimodal models</strong> (fundus + OCT + clinical) and <strong>explainable AI</strong> for screening and risk
-          stratification, co-supervised between UCPH ophthalmology and DTU image analysis.
-        </p>
-      </section>
-
-      <!-- Professional profile -->
-      <section>
-        <h2>Professional profile</h2>
-        <p>
-          Honours graduate (MSc, Applied Mathematics & Computer Science, DTU) specializing in data science,
-          machine learning and AI. Extensive research experience in AI-driven medical imaging at Rigshospitalet in
-          collaboration with Siemens Healthineers, applying deep learning to MR→CT translation, synthetic image
-          generation, segmentation and federated learning. International study stays in Singapore and South Korea
-          have added a strong academic and global perspective.
-        </p>
-      </section>
-
-      <!-- Employment -->
-      <section>
-        <h2>Employment</h2>
-        <h3>Research Assistant, Rigshospitalet – Clinical Physiology & Nuclear Medicine / Radiology (DEPICT)</h3>
-        <p><em>Aug 2025 – Dec 2025 (Siemens Healthineers funded)</em></p>
-        <ul>
-          <li>Train and deploy a product-ready deep learning model for MR-to-CT image translation.</li>
-          <li>Contribute to clinical AI projects in medical imaging bridging research and deployment.</li>
-        </ul>
-
-        <h3>Student Assistant, Rigshospitalet (Clinically Applied AI)</h3>
-        <p><em>Jun 2023 – Jun 2025</em></p>
-        <ul>
-          <li>Worked on synthetic image generation, segmentation and federated learning pipelines.</li>
-          <li>Hands-on with large 3D PET/CT/MRI datasets and collaboration with Siemens Healthineers.</li>
-        </ul>
-      </section>
-
-      <!-- Education -->
-      <section>
-        <h2>Education</h2>
-        <h3>MSc, Mathematical Modelling and Computation (Honours), DTU</h3>
-        <p><em>Sep 2023 – Jun 2025</em></p>
-        <ul>
-          <li>Specialization: Machine Learning & Data Science.</li>
-          <li>Thesis: Improving brain tumor segmentation using synthetic MRI and conditional diffusion models.</li>
-        </ul>
-
-        <h3>BSc, Mathematics and Technology, DTU</h3>
-        <p><em>Sep 2020 – Jun 2023</em></p>
-        <ul>
-          <li>Focus on applied math, optimization, statistical modelling, ML and DL.</li>
-          <li>Thesis: CT-less attenuation correction of cardiac <sup>82</sup>Rb PET using GAN-based synthetic CT.</li>
-        </ul>
-      </section>
-
-      <!-- International -->
-      <section>
-        <h2>International academic activities</h2>
-        <ul>
-          <li><strong>KAIST, South Korea</strong> – AI courses in diffusion, RL, vision (Aug 2024 – Dec 2024).</li>
-          <li><strong>NTU, Singapore</strong> – graph algorithms and deep learning (Aug 2022 – Dec 2022).</li>
-          <li><strong>IPhO 2019</strong> – member of the Danish national team.</li>
-        </ul>
-      </section>
-
-      <!-- Skills -->
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li>Python (PyTorch, MONAI, medical imaging toolkits)</li>
-          <li>Deep learning for 2D/3D medical data, multimodal fusion</li>
-          <li>Data from PET/CT/MRI and ophthalmic imaging (fundus, OCT)</li>
-          <li>Languages: Danish (native), English (fluent)</li>
-        </ul>
-      </section>
-
-      <!-- Contact -->
-      <section>
-        <h2>Contact</h2>
-        <p>
-          Kongens Lyngby, Denmark<br />
-          (+45) 21 53 25 46<br />
-          <a href="mailto:kasperjoergensen3@gmail.com">kasperjoergensen3@gmail.com</a>
-        </p>
-      </section>
-    </main>
-  </div>
-  <script src="../assets/script.js"></script>
-</body>
+    </div>
+    <script src="../assets/js/app.js" data-root=".."></script>
+  </body>
 </html>

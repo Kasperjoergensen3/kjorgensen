@@ -1,47 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <title>PhD work – Kasper Jørgensen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../assets/style.css" />
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-</head>
-<body>
-  <header class="topbar">
-    <div class="topbar-title"><a href="../">Kasper Jørgensen</a></div>
-    <button id="settings-button" class="settings-button" aria-label="Open settings">
-      ⚙️
-    </button>
-    <div id="settings-popup" class="settings-popup hidden">
-      <h2>Settings</h2>
-      <label class="settings-item">
-        <input type="checkbox" id="theme-toggle" /> Dark mode
-      </label>
-      <button id="settings-close" class="settings-close">Close</button>
-    </div>
-  </header>
-
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="brand">
-        <h2>Research</h2>
-        <span class="subtitle">UCPH / DTU</span>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Phd – Kasper Jørgensen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div id="topbar-slot"></div>
+      <div class="page-shell">
+        <div id="sidebar-slot"></div>
+        <main class="content">
+          <h1>Phd</h1>
+          <p>Content for Phd goes here.</p>
+        </main>
       </div>
-      <nav class="nav">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/cv/">CV</a>
-        <a class="nav-link" href="/publications/">Publications</a>
-        <a class="nav-link" href="/posts/">Posts</a>
-        <a class="nav-link active" href="/phd/">PhD work</a>
-      </nav>
-    </aside>
-    <main class="content">
-      <h1>PhD work</h1>
-      <p>Interactive experiment plots.</p>
-      <div id="phd-plot" class="plot-box"></div>
-    </main>
-  </div>
-  <script src="../assets/script.js"></script>
-</body>
+    </div>
+    <script src="../assets/js/app.js" data-root=".."></script>
+  </body>
 </html>
