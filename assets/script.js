@@ -40,3 +40,30 @@ function renderPhdPlot() {
   Plotly.newPlot(plotDiv, [trace], layout, { responsive: true });
 }
 renderPhdPlot();
+
+
+// settings popup handling
+const settingsButton = document.getElementById("settings-button");
+const settingsPopup = document.getElementById("settings-popup");
+const settingsClose = document.getElementById("settings-close");
+
+if (settingsButton && settingsPopup) {
+  settingsButton.addEventListener("click", () => {
+    settingsPopup.classList.toggle("hidden");
+  });
+}
+if (settingsClose && settingsPopup) {
+  settingsClose.addEventListener("click", () => {
+    settingsPopup.classList.add("hidden");
+  });
+}
+// close when clicking outside
+document.addEventListener("click", (e) => {
+  if (
+    settingsPopup &&
+    !settingsPopup.contains(e.target) &&
+    !settingsButton.contains(e.target)
+  ) {
+    settingsPopup.classList.add("hidden");
+  }
+});
