@@ -12,7 +12,7 @@ async function loadPartial(selector, url) {
   if (!el) return;
   const res = await fetch(url);
   if (!res.ok) {
-    console.warn("Could not load partial:", url);
+    console.warn("Could not load partial:", url, res.status);
     return;
   }
   el.innerHTML = await res.text();
@@ -35,8 +35,10 @@ function setupNavLinks(root) {
     const target = mapping[key];
     const href = target === "" ? root + "/" : joinRoot(root, target);
     a.setAttribute("href", href);
-    // active state
-    if (current.endsWith("/" + key) || (key === "home" && (current === "" || current.endsWith("/")))) {
+    if (
+      current.endsWith("/" + key) ||
+      (key === "home" && (current === "" || current === "/" || current.endsWith("/index.html")))
+    ) {
       a.classList.add("active");
     }
   });
@@ -80,19 +82,20 @@ function initSettingsPopup() {
 }
 
 async function initLayout() {
-  // figure out root from script tag
-  const script = document.currentScript;
-  const root = script?.dataset?.root || ".";
+  const script = document.querySelector('script[data-root]');
+  const root = script ? script.dataset.root || "." : ".";
 
+  // load shared parts
   await Promise.all([
     loadPartial("#topbar-slot", joinRoot(root, "assets/partials/topbar.html")),
     loadPartial("#sidebar-slot", joinRoot(root, "assets/partials/sidebar.html")),
   ]);
 
-  // after partials available
+  // now wire everything
   setupNavLinks(root);
   initTheme();
   initSettingsPopup();
 }
 
-initLayout();
+// run after HTML is parsed
+document.addEventListener("DOMContentLoaded", initLayout);
