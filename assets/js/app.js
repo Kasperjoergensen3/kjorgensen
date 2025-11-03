@@ -81,20 +81,67 @@ function initSettingsPopup() {
   });
 }
 
+
+function enableSpaNavigation(root) {
+  const nav = document.getElementById("site-nav");
+  const content = document.querySelector("main.content");
+  if (!nav || !content) return;
+
+  nav.addEventListener("click", async (e) => {
+    const link = e.target.closest("a.nav-link");
+    if (!link) return;
+    e.preventDefault();
+
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    // show a tiny loading state
+    content.innerHTML = "<p>Loading…</p>";
+
+    // fetch the target page HTML
+    const res = await fetch(href);
+    const text = await res.text();
+
+    // parse it and extract that page's <main>
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, "text/html");
+    const newMain = doc.querySelector("main.content");
+    if (newMain) {
+      content.innerHTML = newMain.innerHTML;
+      // update active link
+      nav.querySelectorAll("a.nav-link").forEach(a => a.classList.remove("active"));
+      link.classList.add("active");
+      // update URL so back button works
+      window.history.pushState({}, "", href);
+    }
+  });
+
+  // handle back/forward
+  window.addEventListener("popstate", async () => {
+    const res = await fetch(window.location.pathname);
+    const text = await res.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, "text/html");
+    const newMain = doc.querySelector("main.content");
+    if (newMain) {
+      content.innerHTML = newMain.innerHTML;
+    }
+  });
+}
+
 async function initLayout() {
-  const script = document.querySelector('script[data-root]');
+  const script = document.querySelector("script[data-root]");
   const root = script ? script.dataset.root || "." : ".";
 
-  // load shared parts
   await Promise.all([
     loadPartial("#topbar-slot", joinRoot(root, "assets/partials/topbar.html")),
     loadPartial("#sidebar-slot", joinRoot(root, "assets/partials/sidebar.html")),
   ]);
 
-  // now wire everything
   setupNavLinks(root);
   initTheme();
   initSettingsPopup();
+  enableSpaNavigation(root);
 }
 
 // run after HTML is parsed

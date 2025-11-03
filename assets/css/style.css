@@ -1,3 +1,8 @@
+html, body {
+  background: #0f172a; /* same as your dark bg */
+  color: #e2e8f0;
+}
+
 :root {
   --bg: #f5f5f5;
   --bg-content: #ffffff;
