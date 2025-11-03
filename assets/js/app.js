@@ -1,4 +1,3 @@
-\
 // /assets/js/app.js
 
 // joins root and path safely
