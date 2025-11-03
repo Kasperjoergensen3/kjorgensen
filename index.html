@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kasper – Research & PhD Work</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <!-- Plotly CDN -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <h2>Research</h2>
+        <span class="subtitle">UCPH / DTU</span>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item" data-target="section-cv">CV</button>
+        <button class="nav-item" data-target="section-publications">Publications</button>
+        <button class="nav-item" data-target="section-posts">Posts</button>
+        <button class="nav-item" data-target="section-phd">PhD work</button>
+
+        <!-- Dropdown / collapsible -->
+        <div class="nav-dropdown">
+          <button class="nav-item dropdown-toggle" data-dropdown="settings-menu">
+            Settings ▾
+          </button>
+          <div class="dropdown-content" id="settings-menu">
+            <label class="toggle-row">
+              <span>Dark mode</span>
+              <input type="checkbox" id="theme-toggle" />
+            </label>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+      <!-- CV -->
+      <section id="section-cv" class="section visible">
+        <h1>CV</h1>
+        <p>Short profile, affiliations, current PhD position, links.</p>
+      </section>
+
+      <!-- Publications -->
+      <section id="section-publications" class="section">
+        <h1>Publications</h1>
+        <ul>
+          <li>
+            Automated Supraclavicular BAT Segmentation in CT using nnU-Net (2025) –
+            <a href="#">PDF</a> · <a href="#">Code</a>
+          </li>
+          <li>…</li>
+        </ul>
+      </section>
+
+      <!-- Posts -->
+      <section id="section-posts" class="section">
+        <h1>Posts</h1>
+        <p>Short notes on experiments, diffusion models, segmentation, etc.</p>
+      </section>
+
+      <!-- PhD work (with Plotly) -->
+      <section id="section-phd" class="section">
+        <h1>PhD work</h1>
+        <p>Interactive results from current experiments.</p>
+        <div id="phd-plot" class="plot-box"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
