@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Home – Kasper Jørgensen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <div class="app-shell">
-      <div id="topbar-slot"></div>
-      <div class="page-shell">
-        <div id="sidebar-slot"></div>
-        <main class="content">
-          <h1>Welcome</h1>
-          <p>This is the landing page.</p>
-        </main>
-      </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kasper Jørgensen</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>Kasper Jørgensen</h1>
+      <span class="subtitle">PhD student at UCPH / DTU – FOREVER Project</span>
     </div>
-    <!-- this is the JS path the zip uses -->
-    <script src="assets/js/app.js" data-root="." defer></script>
-  </body>
+    <nav id="site-nav">
+      <a href="#home" data-page="home" class="active">Home</a>
+      <a href="#cv" data-page="cv">CV</a>
+      <a href="#publications" data-page="publications">Publications</a>
+      <a href="#posts" data-page="posts">Posts</a>
+      <a href="#phd" data-page="phd">PhD</a>
+    </nav>
+    <button id="settings-btn">⚙️</button>
+  </header>
+
+  <main id="content"></main>
+
+  <div id="settings-popup" class="hidden">
+    <label>
+      <input type="checkbox" id="theme-toggle" />
+      Dark Mode
+    </label>
+  </div>
+</body>
 </html>
