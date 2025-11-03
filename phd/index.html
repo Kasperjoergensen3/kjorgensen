@@ -2,9 +2,10 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <title>Home – Kasper Jørgensen</title>
+  <title>PhD work – Kasper Jørgensen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
   <div class="layout">
@@ -14,19 +15,20 @@
         <span class="subtitle">UCPH / DTU</span>
       </div>
       <nav class="nav">
-        <a class="nav-link active" href="/">Home</a>
+        <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/cv/">CV</a>
         <a class="nav-link" href="/publications/">Publications</a>
         <a class="nav-link" href="/posts/">Posts</a>
-        <a class="nav-link" href="/phd/">PhD work</a>
+        <a class="nav-link active" href="/phd/">PhD work</a>
         <a class="nav-link" href="/settings/">Settings</a>
       </nav>
     </aside>
     <main class="content">
-      <h1>Welcome</h1>
-      <p>This site hosts my PhD work, publications, and experiment notes.</p>
+      <h1>PhD work</h1>
+      <p>Interactive experiment plots.</p>
+      <div id="phd-plot" class="plot-box"></div>
     </main>
   </div>
-  <script src="assets/script.js"></script>
+  <script src="../assets/script.js"></script>
 </body>
 </html>
